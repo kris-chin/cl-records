@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "name": "artists",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "artist_name": {
+      "type": "string"
+    },
+    "news": {
+      "via": "artists",
+      "collection": "press-releases",
+      "dominant": true
+    },
+    "promotional_photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "discography": {
+      "via": "artists",
+      "collection": "releases",
+      "dominant": true
+    },
+    "videography": {
+      "via": "artists",
+      "collection": "videos"
+    },
+    "promotional_material": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "contact_info": {
+      "type": "json"
+    },
+    "social_media": {
+      "type": "json"
+    },
+    "songkick_artist_id": {
+      "type": "integer"
+    }
+  }
+}

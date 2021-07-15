@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "name": "videos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    },
+    "artists": {
+      "via": "videography",
+      "collection": "artists",
+      "dominant": true
+    },
+    "releases": {
+      "via": "videos",
+      "collection": "releases"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "extra_media": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

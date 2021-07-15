@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "name": "about",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "media_content": {
+      "type": "richtext"
+    },
+    "social_media": {
+      "type": "json"
+    }
+  }
+}

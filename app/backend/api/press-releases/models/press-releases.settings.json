@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "press_releases",
+  "info": {
+    "name": "articles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media_content": {
+      "type": "richtext"
+    },
+    "artists": {
+      "via": "news",
+      "collection": "artists"
+    },
+    "releases": {
+      "via": "articles",
+      "collection": "releases"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "releases",
+  "info": {
+    "name": "Releases",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "release_type": {
+      "type": "enumeration",
+      "enum": [
+        "Album",
+        "EP",
+        "Single",
+        "Mixtape",
+        "Compilation"
+      ]
+    },
+    "artwork": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "artists": {
+      "via": "discography",
+      "collection": "artists"
+    },
+    "release_date": {
+      "type": "date"
+    },
+    "videos": {
+      "via": "releases",
+      "collection": "videos",
+      "dominant": true
+    },
+    "articles": {
+      "via": "releases",
+      "collection": "press-releases",
+      "dominant": true
+    },
+    "links": {
+      "type": "json"
+    },
+    "extra_media": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "bio": {
+      "type": "richtext"
+    }
+  }
+}
